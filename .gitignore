@@ -32,3 +32,5 @@
 .env
 
 /config/credentials/development.key
+
+/Gemfile
