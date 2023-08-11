@@ -1,6 +1,4 @@
-class a < ApplicationController
-  string :event_name
-
+class EventsController < ApplicationController
   def create
     events =  Event.where(title: params[:event_name]).take
 
@@ -19,5 +17,15 @@ class a < ApplicationController
     end
 
     return { id: events.id }
+  end
+
+  def data_show
+    event = Event.where(id: self.params[:id]).take
+     @_input_intractions
+    if event.blank?
+      self.errors.add(:error, 'Invalid Error')
+      return
+    end
+    render json: event
   end
 end

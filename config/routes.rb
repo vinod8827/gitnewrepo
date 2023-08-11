@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  resources :clients
-    post '/event',  to: 'event#create'
+  get '/clients/:id', to: 'clients#data_show'
+  get '/events/:id', to: 'events#data_show'
 end
