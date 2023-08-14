@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Triangles</h1>
+
+<div id="triangles">
+  <% @triangles.each do |triangle| %>
+    <%= render triangle %>
+    <p>
+      <%= link_to "Show this triangle", triangle %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New triangle", new_triangle_path %>

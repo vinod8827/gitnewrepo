@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @triangle %>
+
+<div>
+  <%= link_to "Edit this triangle", edit_triangle_path(@triangle) %> |
+  <%= link_to "Back to triangles", triangles_path %>
+
+  <%= button_to "Destroy this triangle", @triangle, method: :delete %>
+</div>
