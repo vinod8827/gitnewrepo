@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_09_143257) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_11_175805) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,6 +21,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_09_143257) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["object_type", "object_id"], name: "index_audits_on_object"
+  end
+
+  create_table "client_salaries", force: :cascade do |t|
+    t.text "name"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "clients", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -45,6 +52,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_09_143257) do
 
   create_table "posts", force: :cascade do |t|
     t.text "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "salarys", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.text "name"
+    t.integer "salary"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

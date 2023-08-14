@@ -1,0 +1,2 @@
+class ClientSalary < ApplicationRecord
+end

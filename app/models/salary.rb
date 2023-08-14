@@ -1,0 +1,3 @@
+class Salarie < ApplicationRecord
+
+end

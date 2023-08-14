@@ -44,6 +44,8 @@ gem "bootsnap", require: false
 
 gem 'pry-rails', :group => :development
 
+gem 'kaminari'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
