@@ -97,4 +97,81 @@ class Main < ApplicationController
   end
 
   #output: a1b1aa2c1a1bb2c1a1
+  def self.reverse_string
+    a = "vinod"
+    b = a.split('')
+    c = []
+    
+    b.each_with_index do |t, index|
+      d = b.count - (index + 1)
+      c << b[d]
+    end
+    puts c.join('')
+  end
+
+  def self.array_flatten
+   a = [1,[1,2,[1,[12,[1]]]], [1,233,4]]
+    #output is [1,1,1,12,1]
+   b = []
+   flatten_value(a, b)
+   print b
+  end
+
+   def self.flatten_value(t, b)
+     t.each do | t |
+      if t.is_a?(Array)
+        flatten_value(t,b)
+      else
+        b << t
+      end
+     end
+   end
+
+   def self.find_missing_number
+    a = [1,3,5,6,7,5,8,9,10]
+    b = []
+    (a.first..a.last).each do |t|
+      if a.exclude?(t)
+        b << t
+      end
+    end
+    puts b
+   end
+
+   def self.find_missing_number
+    a = [1,3,5,6,7,5,8,9,10]
+    b = []
+    (a.first..a.last).each do |t|
+      if a.exclude?(t)
+        b << t
+      end
+    end
+    puts b
+   end
+   
+   def add_exactly_two_number
+    a = [2, 7, 11, 15]
+    a.each_with_index do |t, index|
+       
+    end
+   end
+
+   def add_exactly_two_number
+    a = [2, 7, 11, 15]
+    a.each_with_index do |t, index|
+       
+    end
+   end
+
+   def self.find_largest_number
+    a = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+    b = []
+    a.sort.each_with_index do |t, index|
+      find_index_of_array = a.count - (index + 1)
+      if find_index_of_array == 1 || find_index_of_array == 0
+        b << t
+      end
+    end
+    puts "so largest sum of the number is #{b[0]} and #{b[1]} and sum of this number is #{b[0] + b[1]}"
+   end
 end
