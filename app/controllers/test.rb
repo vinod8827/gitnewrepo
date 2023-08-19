@@ -1,3 +1,3 @@
-class Test < ApplicationRecord
-  
+class Test < ApplicationController
+
 end
