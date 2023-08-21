@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_20_100728) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_20_145411) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,11 +30,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_20_100728) do
     t.index ["object_type", "object_id"], name: "index_audits_on_object"
   end
 
-  create_table "cats", force: :cascade do |t|
+  create_table "auds", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "objectable_type", null: false
+    t.bigint "objectable_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["objectable_type", "objectable_id"], name: "index_auds_on_objectable"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.text "name"
+    t.text "description"
+    t.string "commentable_type", null: false
+    t.bigint "commentable_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["commentable_type", "commentable_id"], name: "index_categories_on_commentable"
   end
 
   create_table "channels", force: :cascade do |t|
@@ -64,11 +76,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_20_100728) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "dogs", force: :cascade do |t|
-    t.string "name"
-    t.string "type"
+  create_table "electronics", force: :cascade do |t|
+    t.text "content"
+    t.string "objectable_type", null: false
+    t.bigint "objectable_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["objectable_type", "objectable_id"], name: "index_electronics_on_objectable"
   end
 
   create_table "event_mappaings", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -86,6 +100,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_20_100728) do
 
   create_table "posts", force: :cascade do |t|
     t.text "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

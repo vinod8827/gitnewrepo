@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  resources :products do
+    collection do
+      get :search # Define a collection route named 'search'
+      get :search_via_active_record
+      get :search_via_inactive_record
+    end
+
+    member do 
+      get :personal_detail
+    end
+  end
+
+  resources :products
   resources :triangles
   get '/clients/:id', to: 'clients#data_show'
   get '/events/:id', to: 'events#data_show'

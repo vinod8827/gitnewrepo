@@ -8,6 +8,8 @@ gem "rails", "~> 7.0.6"
 
 gem 'elasticsearch-model'
 
+gem 'active_model_serializers'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
