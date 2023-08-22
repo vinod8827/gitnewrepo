@@ -14,7 +14,6 @@ class Post < ApplicationRecord
   validates :title, presence: true, uniqueness: { case_sensitive: false }
 
   def strip_hash_values
-    binding.pry
     return unless filters.is_a?(Hash)
 
     self.filters.transform_values!(&:strip)

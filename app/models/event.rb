@@ -21,20 +21,3 @@ class Event < ApplicationRecord
     puts EventModule.user_info
   end
 end
-
-
-
-class Audit < ApplicationRecord
-  belongs_to :objectable, polymorphic: true
-end
-
-class Cat < ApplicationRecord
-  has_many :audits, class_name: 'Audit', as: :object
-end
-
-class Dog < ApplicationRecord
-  has_many :audits, class_name: 'Audit', as: :object
-end
-
-
-rails generate model Audits content: text objectabel: references {polymorphic}
