@@ -1,2 +1,0 @@
-class Triangle < ApplicationRecord
-end

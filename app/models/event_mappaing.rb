@@ -1,2 +1,0 @@
-class EventMappaing < ApplicationRecord
-end

@@ -1,2 +1,0 @@
-class Aud < ApplicationRecord
-end
