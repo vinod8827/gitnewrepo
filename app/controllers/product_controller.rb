@@ -1,0 +1,3 @@
+class ProductController < applicationController
+
+end
