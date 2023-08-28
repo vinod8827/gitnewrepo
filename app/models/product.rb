@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
   def self.ransackable_attributes(_auth_object = nil)
     # List the attributes you want to allow searching on
-    %w[name description price]
+    %w[name price]
   end
 
   # Optionally, you can specify ransackable_associations

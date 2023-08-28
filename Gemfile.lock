@@ -68,6 +68,12 @@ GEM
     activerecord (7.0.7.2)
       activemodel (= 7.0.7.2)
       activesupport (= 7.0.7.2)
+    activerecord-session_store (2.0.0)
+      actionpack (>= 5.2.4.1)
+      activerecord (>= 5.2.4.1)
+      multi_json (~> 1.11, >= 1.11.2)
+      rack (>= 2.0.8, < 3)
+      railties (>= 5.2.4.1)
     activestorage (7.0.7.2)
       actionpack (= 7.0.7.2)
       activejob (= 7.0.7.2)
@@ -172,6 +178,7 @@ GEM
     mini_mime (1.1.5)
     minitest (5.19.0)
     msgpack (1.7.2)
+    multi_json (1.15.0)
     net-imap (0.3.7)
       date
       net-protocol
@@ -288,6 +295,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers
   activeadmin
+  activerecord-session_store
   bootsnap
   capybara
   debug

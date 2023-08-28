@@ -62,6 +62,9 @@ gem 'active_model_serializers'
 # use to javascript cascading
 gem 'sassc'
 
+# session store
+gem 'activerecord-session_store'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
